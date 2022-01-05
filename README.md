@@ -25,6 +25,11 @@ Default configuration:
 - Upon each I2C query, the code returns a stream of 32 bytes corresponding to 8 numbers: 4 single-precision floating-point values (taking 4 bytes) and 4 unsigned long integers (also taking 4 bytes). The first 4 numbers are the LM35 temperatures in Celsius degrees, the other 4 numbers are the raw oversampled readings.
 - The 4 returned raw ADC values are integers between 0 and 65535 (16 bit values).
 
+## Used libraries
+
+ - https://github.com/regimantas/Oversampling (modified for managing 32-bit unsigned long return vlues, ref. https://github.com/regimantas/Oversampling/pull/2/files)
+ - Default Arduino Wire library (I2C master/slave)
+ 
 # Raspberry Pi interface
 
 Installing pip3: `sudo apt-get install python3-pip`
