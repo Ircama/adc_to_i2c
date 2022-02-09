@@ -111,6 +111,8 @@ void setup() {
     DIDR0 |= 1<<adc_pins[i];
 
   Wire.begin(SLAVE_ADDRESS);
+  //By default .begin() will set I2C SCL to Standard Speed mode of 100kHz
+  Wire.setClock(400000UL); // set I2C SCL to High Speed Mode of 400kHz
   Wire.onRequest(sendData);
 } // setup
 
